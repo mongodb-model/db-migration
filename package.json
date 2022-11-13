@@ -1,0 +1,36 @@
+{
+  "name": "@mongodb-model/db-migration",
+  "version": "0.0.0",
+  "description": "db-migration",
+  "main": "index.js",
+  "bin": {
+    "db-migration": "bin/index.js"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "vitest --globals"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mongodb-model/db-migration.git"
+  },
+  "keywords": [
+    "migration",
+    "stream",
+    "duplex",
+    "transform",
+    "eventEmitter"
+  ],
+  "author": "Ericson S. Weah <ericson.weah@gmail.com> (https://www.ericsonweah.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mongodb-model/db-migration/issues"
+  },
+  "homepage": "https://github.com/mongodb-model/db-migration#readme",
+  "dependencies": {
+    "dotenv": "16.0.3",
+    "vitest": "0.25.1"
+  }
+}
