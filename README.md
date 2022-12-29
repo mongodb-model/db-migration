@@ -1,25 +1,25 @@
-# DB Query
+# Base
 
  Standalone base module extending the NodeJs Transform API with few other functionalities added
 
 ### Installation
 
 ```bash
-$ yarn add @mongodb-model/db-migration 
+$ yarn add @mongodb-model/schema 
 
 ```
  or 
 
 ```bash
 
-$ npm i @mongodb-model/db-migration
+$ npm i @mongodb-model/schema
 
 ```
 
 ### Simple Usage Example
 
 ```bash
- const Base = require('@mongodb-model/db-migration');
+ const Base = require('@mongodb-model/schema');
  const base = new Base();
  base.apiGet();
  base.on('apiGet', data => console.log(data));
@@ -28,7 +28,7 @@ $ npm i @mongodb-model/db-migration
 ```
 or 
 ```bash
- class MyWonderfulClass extends require('@mongodb-model/db-migration') {
+ class MyWonderfulClass extends require('@mongodb-model/schema') {
 
     constructor(...arrayOfObjects) {
 

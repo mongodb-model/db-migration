@@ -16,6 +16,7 @@
 
 
 const Migration = require('../');
+
 class CLI extends require("../base") {
 
   constructor(...arrayOfObjects) {
@@ -42,33 +43,24 @@ class CLI extends require("../base") {
   command(index = 2){
     return process.argv[index]
  }
-
-
  commands(){
-  
   switch(this.command(2)){
       case "make":
         if(this.command(3)){
-            switch(this.command(3)){
-              case 'migration':
-                if(this.command(4)){
-                  const {makeMigration} = new Migration({command: this.command(4)})
-                   if(this.command(5)){
-                    makeMigration(this.command(4), this.command(5));
-                   }else{
-                    makeMigration(this.command(4));
-                   }
-                }else{
-                  console.log(3, this.command(3))
-                }
-                break;
-              default: 
-                console.log('make migration command');
-                break;            }
-        }else{
-          console.log('make man page');
-        }
-      
+          const  {makeMigration, hasType} =  new Migration({command: this.command(2)})
+          if(this.command(4)){
+              if(hasType(this.command(4))){
+                makeMigration(this.command(3), this.command(4));
+              }else{
+                console.log(`invalid argument for make:migration ${this.command(3)}`);
+              }
+          }else{
+            makeMigration(this.command(3));
+          }
+         }else{
+          console.log('make:migration command adfdasf', this.command(3));
+         }
+       
         break;
       case "man":
         console.log('make man page');
